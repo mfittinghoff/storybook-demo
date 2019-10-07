@@ -1,0 +1,28 @@
+$table-background-color-even: #ffffff;
+$table-background-color-odd: #e1e1e1;
+
+.table {
+  border: 1px solid $table-background-color-odd;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  .th, .tr {
+    padding: 10px;
+  }
+
+  .th {
+    border-bottom: 1px solid $table-background-color-odd;
+  }
+
+  .tr {
+    transition: transform .4s ease-in-out;
+    background-color: $table-background-color-even;
+    &:hover {
+      transform: scale(1.6);
+    }
+
+    &.odd {
+      background-color: $table-background-color-odd;
+    }
+  }
+}

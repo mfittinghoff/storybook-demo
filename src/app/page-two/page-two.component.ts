@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {DummyService} from '../services/dummy.service';
+import {Observable} from 'rxjs';
+import {TableRow} from '../models/table-row.interface';
 
 @Component({
   selector: 'app-page-two',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageTwoComponent implements OnInit {
 
-  constructor() { }
+  data$: Observable<TableRow[]>;
+
+  constructor(private readonly dummySvc: DummyService) { }
 
   ngOnInit() {
+    this.data$ = this.dummySvc.getData$();
   }
 
 }

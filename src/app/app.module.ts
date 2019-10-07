@@ -8,6 +8,8 @@ import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
 import {ChartsModule} from 'ng2-charts';
 import { BubbleChartComponent } from './page-one/bubble-chart/bubble-chart.component';
+import { TableHeaderCellComponent } from './page-two/table-header-cell/table-header-cell.component';
+import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { BubbleChartComponent } from './page-one/bubble-chart/bubble-chart.compo
     ButtonComponent,
     PageOneComponent,
     PageTwoComponent,
-    BubbleChartComponent
+    BubbleChartComponent,
+    TableHeaderCellComponent,
+    LoadingAnimationComponent,
   ],
   imports: [
     BrowserModule,

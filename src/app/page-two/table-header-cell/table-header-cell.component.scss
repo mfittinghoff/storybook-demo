@@ -1,0 +1,7 @@
+:host:hover {
+  background-color: #e1e1e1;
+}
+
+:host {
+  transition: background-color .4s ease-in-out;
+}

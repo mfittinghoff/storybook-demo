@@ -1,1 +1,22 @@
-<p>page-two works!</p>
+<div class="table results-table" *ngIf="data$ | async as results; else loading">
+
+  <span app-table-header-cell class="th" [label]="'Id'"></span>
+  <span app-table-header-cell class="th" [label]="'Street'"></span>
+  <span app-table-header-cell class="th" [label]="'House number'"></span>
+  <span app-table-header-cell class="th" [label]="'Zip Code'"></span>
+  <span app-table-header-cell class="th" [label]="'City'"></span>
+
+  <ng-container *ngFor="let result of results; let odd = odd">
+    <span class="tr" [class.odd]="odd">{{result.id}}</span>
+    <span class="tr" [class.odd]="odd">{{result.street}}</span>
+    <span class="tr" [class.odd]="odd">{{result.houseNumber}}</span>
+    <span class="tr" [class.odd]="odd">{{result.zipCode}}</span>
+    <span class="tr" [class.odd]="odd">{{result.city}}</span>
+  </ng-container>
+
+</div>
+
+
+<ng-template #loading>
+  <app-loading-animation></app-loading-animation>
+</ng-template>
