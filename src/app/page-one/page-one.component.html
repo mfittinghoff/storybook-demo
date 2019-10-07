@@ -1,1 +1,9 @@
-<p>page-one works!</p>
+<div>
+  <h1>Here, have some charts :)</h1>
+
+  <app-button [label]="'Randomize bubbles'" (clicked)="randomize()">
+
+  </app-button>
+
+  <app-bubble-chart [bubbleChartData]="bubbleChartData"></app-bubble-chart>
+</div>

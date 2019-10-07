@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
+import {ChartsModule} from 'ng2-charts';
+import { BubbleChartComponent } from './page-one/bubble-chart/bubble-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     PageOneComponent,
-    PageTwoComponent
+    PageTwoComponent,
+    BubbleChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
