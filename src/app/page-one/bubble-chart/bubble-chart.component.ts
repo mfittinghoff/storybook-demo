@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
-import {Color} from 'ng2-charts';
 
 @Component({
   selector: 'app-bubble-chart',
@@ -34,24 +33,9 @@ export class BubbleChartComponent implements OnInit {
       ]
     }
   };
-  public bubbleChartColors: Color[] = [
-    {
-      backgroundColor: [
-        'red',
-        'green',
-        'blue',
-        'purple',
-        'yellow',
-        'brown',
-        'magenta',
-        'cyan',
-        'orange',
-        'pink'
-      ]
-    }
-  ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
