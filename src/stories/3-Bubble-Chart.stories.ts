@@ -1,15 +1,15 @@
 import {moduleMetadata, storiesOf} from '@storybook/angular';
-import {button, withKnobs} from '@storybook/addon-knobs';
+import {withKnobs, button} from '@storybook/addon-knobs';
 import {BubbleChartComponent} from '../app/page-one/bubble-chart/bubble-chart.component';
 import {ChartsModule} from 'ng2-charts';
 
 const values = [
   {
     data: [
-      { x: 10, y: 10, r: 10 },
-      { x: 15, y: 5, r: 15 },
-      { x: 26, y: 12, r: 23 },
-      { x: 7, y: 8, r: 8 },
+      {x: 10, y: 10, r: 10},
+      {x: 15, y: 5, r: 15},
+      {x: 26, y: 12, r: 23},
+      {x: 7, y: 8, r: 8},
     ],
     label: 'Series A',
     backgroundColor: 'green',
@@ -33,7 +33,6 @@ const dataSet = {
   hoverBorderColor: 'red',
 };
 
-button('Add dataset', () => values.push(dataSet));
 
 storiesOf('BubbleChart', module)
   .addDecorator(withKnobs)
@@ -41,9 +40,13 @@ storiesOf('BubbleChart', module)
     moduleMetadata({
       imports: [ChartsModule],
     }))
-  .add('Default', () => ({
-    component: BubbleChartComponent,
-    props: {
-      bubbleChartData: values,
-    },
-  }));
+  .add('Default', () => {
+    button('Add dataset', () => values.push(dataSet));
+    return {
+      component: BubbleChartComponent,
+      props:
+        {
+          bubbleChartData: values,
+        }
+    };
+  });
